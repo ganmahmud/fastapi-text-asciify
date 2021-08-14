@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} 
+  <title>All Fonts</title>
+{% endblock %} 
+
+{% block content %} 
+  <div class="container">
+    <ul>
+    {% for font in font_list %}
+        <li>{{font}}</li>
+    {% endfor %}
+    </ul>
+  </div>
+{% endblock %} 

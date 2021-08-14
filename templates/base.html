@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="fastapitutorial.com" content="Nofoobar">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+    <style>
+        html {
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        
+        body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+
+        body{
+            font-family: 'Atkinson Hyperlegible', sans-serif;
+            color: rgb(56, 56, 56);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main{
+            flex: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+
+        .text-center{
+            text-align: center;
+        }
+        small{
+            display: block;
+        }
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+        footer{
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+        }
+        footer small{
+            margin-right: 5px;
+        }
+        .copy{
+            cursor: pointer;
+        }
+        
+    </style>
+    {% block title %}
+    {% endblock %}
+</head>
+
+<body>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        {% if self._TemplateReference__context.name == 'art.html' %}
+        <small class="copy" onclick="copyElementText(document.querySelector('.art'))">Copy to clipboard</small>
+        <small> | <a title="Home" href="/">Home</a> | </small>
+        {% endif %}
+        <small>By <a href="#">@gan.mahmud</a> | </small> 
+        <small><a href="#">Source</a></small>
+    </footer>
+    <script>
+        function copyElementText(element) {
+            const text = element.innerText;
+            console.log(text)
+            let copy_trigger = document.querySelector(".copy");
+            const old_text = copy_trigger.innerText;
+            let elem = document.createElement("textarea");
+            document.body.appendChild(elem);
+            elem.value = text;
+            elem.select();
+            document.execCommand("copy");
+            document.body.removeChild(elem);
+            copy_trigger.innerText = "Copied"
+            setTimeout(function(){ 
+                copy_trigger.innerText = old_text 
+            }, 500);
+        }
+    </script>
+    {% block scripts %}
+    {% endblock %}
+
+
+</body>
+</html>

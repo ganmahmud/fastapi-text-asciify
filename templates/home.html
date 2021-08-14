@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+
+{% block title %} 
+  <title>Test to Ascii Art</title>
+{% endblock %} 
+
+{% block content %} 
+  <div>
+    <section>
+      <pre>{{home_art}}</pre>
+      <h1 style="margin-bottom: 15px;">How to ASCIIfy</h1>
+    </section>
+    <div>
+      <p>Make HTTP GET requests to <a href="/asciify">/asciify</a> and set the text parameter.</p>
+      <p>Example: <a href="/asciify?text=Hello+ASCII">/asciify?text=Hello+ASCII</a></p>
+      
+      <p style="margin-top:15px;">Optionally you can set the font parameter to specify the output font.</p>
+      <p>Example: <a href="/asciify?text=ASCII+art&font=starwars">/asciify?text=ASCII+art&font=starwars</a></p>
+
+      <p style="margin-top:15px;">
+        For available list of fonts try <a href="/fonts">/fonts</a>
+      </p>
+
+      <p style="margin-top: 15px;">To use this API in your own application try <a href="/api?text=JSON&font=doom">/api?text=Hello+ASCII</a></p>
+    </div>
+  </div>
+{% endblock %} 
