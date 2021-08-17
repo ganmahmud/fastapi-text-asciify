@@ -15,4 +15,5 @@ For available list of fonts try [/fonts](/fonts)
 To use this API in your own application try [/api?text=Hello+ASCII](/api?text=JSON&font=doom)
 
 ## Docker
+[Docker hub](images/docker-hub-logo.png) 
 [Docker hub Image](https://hub.docker.com/r/ganmahmud/asciify) 
