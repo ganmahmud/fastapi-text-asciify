@@ -16,5 +16,4 @@ To use this API in your own application try [/api?text=Hello+ASCII](/api?text=JS
 
 ### [Live Demo](https://fastapi-asciify.herokuapp.com/)
 ## Docker
-[Docker hub](docker-hub-logo.png) 
-[Docker hub Image](https://hub.docker.com/r/ganmahmud/asciify) 
+![Screenshot](docker-hub-logo.png) [Docker hub Image](https://hub.docker.com/r/ganmahmud/asciify) 
