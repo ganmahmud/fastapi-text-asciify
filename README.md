@@ -1,6 +1,5 @@
 
-How to ASCIIfy
-==============
+## How to ASCIIfy ( [Live Demo](https://fastapi-asciify.herokuapp.com/) )
 
 Make HTTP GET requests to [/asciify](/asciify) and set the text parameter.
 
@@ -13,7 +12,5 @@ Example: [/asciify?text=ASCII+art&font=starwars](/asciify?text=ASCII+art&font=st
 For available list of fonts try [/fonts](/fonts)
 
 To use this API in your own application try [/api?text=Hello+ASCII](/api?text=JSON&font=doom)
-
-### [Live Demo](https://fastapi-asciify.herokuapp.com/)
 
 ### [Docker hub Image](https://hub.docker.com/r/ganmahmud/asciify)
