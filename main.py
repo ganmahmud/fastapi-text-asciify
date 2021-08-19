@@ -3,6 +3,8 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pyfiglet import Figlet, FigletFont
+from PIL import Image
+
 # from typing import Optional
 
 app = FastAPI()
