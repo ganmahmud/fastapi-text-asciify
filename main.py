@@ -24,9 +24,16 @@ async def text_to_ascii(request: Request, text: str = "ASCII ART", font: str = "
     return templates.TemplateResponse("art.html",{"request": request, "art" : ascii_art})
 
 @app.get("/fonts/")
-async def get_fonts(request: Request):
+async def get_fonts(request: Request, text: str = "ASCII ART"):
     fonts = FigletFont.getFonts()
-    return templates.TemplateResponse("fonts.html",{"request": request, "font_list" : fonts})
+    res = []
+    for font in fonts:
+        out_dict = {}
+        out_dict["font"] = font
+        out_dict["art"] = Figlet(font=font).renderText(text)
+        res.append(out_dict)
+    
+    return templates.TemplateResponse("fonts.html",{"request": request, "text" : text, "font_list" : res})
 
 if __name__ == "__main__":
         uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=True, log_level="info")

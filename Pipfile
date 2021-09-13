@@ -10,6 +10,7 @@ pyfiglet = "==0.7"
 Jinja2 = "==3.0.1"
 pytest = "*"
 requests = "*"
+pillow = "*"
 
 [dev-packages]
 

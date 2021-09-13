@@ -7,8 +7,11 @@
 {% block content %} 
   <div class="container">
     <ul>
-    {% for font in font_list %}
-        <li>{{font}}</li>
+    {% for item in font_list %}
+        <li>
+          <div style="margin-bottom: 5px;"><a href="/asciify?text={{text}}&font={{item.font}}">{{item.font}}</a></div>
+          <div title="font: {{item.font}}"><pre>{{item.art}}</pre></div>
+        </li>
     {% endfor %}
     </ul>
   </div>
